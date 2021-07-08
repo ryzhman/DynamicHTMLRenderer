@@ -1,0 +1,15 @@
+<div>
+  <textarea [(ngModel)]="textToRender" (ngModelChange)="changeModel($event)" rows="10" cols="50"></textarea>
+</div>
+
+<div>
+</div>
+
+<div *ngIf="compiledHtmlElems">
+  <mat-grid-list cols="2" rowHeight="50px">
+<!--    Iterating over the Elements with rendered HTMls and insert them as innerHTML into the template-->
+    <mat-grid-tile *ngFor="let item of compiledHtmlElems" [innerHTML]="item.renderedHtml"></mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
